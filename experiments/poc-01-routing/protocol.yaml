@@ -1,0 +1,26 @@
+id: POC-01
+name: capability-aware-model-routing
+status: experimental
+baselines:
+  - strongest-first
+  - cheapest-first
+  - random
+  - routellm-style
+  - eurinhash-capability-aware
+metrics:
+  - verified_success_rate
+  - effective_cost_per_task
+  - tokens_per_task
+  - p50_latency_ms
+  - p95_latency_ms
+  - failure_rate
+  - fallback_rate
+controls:
+  - dataset_version
+  - model_versions
+  - prompt_template
+  - temperature
+  - budget
+  - evaluation_seed
+repetitions: 3
+rule: no production integration before replication and validity review
