@@ -42,6 +42,29 @@ PACKAGE / INTEGRATION
 
 Une expérimentation n'est jamais considérée comme une fonctionnalité de production sans preuve suffisante.
 
+## Standard expérimental des PoC
+
+Chaque PoC doit être un objet de recherche autonome et reproductible :
+
+```text
+experiments/poc-XX-name/
+├── research/
+│   └── QUESTION.md
+├── protocol.yaml
+├── baselines/
+├── datasets/
+├── runner/
+├── results/            # JSON/CSV bruts, générés par les runs
+├── analysis/           # scripts, tableaux et graphiques dérivés
+└── FINDING.md
+```
+
+Le runner doit enregistrer au minimum : version du code, version du dataset, seed, configuration, modèles/providers, métriques, erreurs et horodatage. Les résultats bruts sont immuables ; les analyses sont dérivées des résultats.
+
+Un PoC doit comparer au moins une baseline pertinente et définir avant exécution : question, hypothèse falsifiable, variables, protocole, métriques et menaces à la validité.
+
+Aucun résultat n'est présenté comme preuve de supériorité sans réplication suffisante et analyse des limites. `INCONCLUSIVE` est un résultat valide.
+
 ## Architecture de l'écosystème
 
 ```text
@@ -117,7 +140,7 @@ Le Lab peut proposer une solution ; il ne décide pas seul de son intégration e
 
 ## Statut
 
-Le repository constitue la fondation du laboratoire. Les premiers travaux doivent établir le Research Operating System avant de multiplier les prototypes.
+Le repository constitue maintenant la fondation du laboratoire expérimental. Les premiers travaux doivent privilégier des PoC reproductibles, mesurables et falsifiables avant toute multiplication de prototypes.
 
 Voir :
 
