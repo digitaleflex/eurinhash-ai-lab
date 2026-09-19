@@ -1,0 +1,6 @@
+id: POC-02
+name: resource-truth-quota-availability
+baselines: [boolean-availability, multi-state, multi-state-confidence-freshness]
+states: [CONFIGURED, DISCOVERED, AVAILABLE, AUTHORIZED, HEALTHY, USABLE, ACTIVE, USED]
+metrics: [false_available_rate, invalid_dispatch_rate, unnecessary_retry_rate, recovery_time_ms, stale_state_decisions, resource_utilization]
+repetitions: 3
